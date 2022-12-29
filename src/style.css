@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background: #2A2E4B;
+    height: 100vh;
+    display:flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+}
+.container {
+    display:flex;
+    flex-flow: row wrap;
+    width: 100vw;
+    justify-content: space-evenly;
+    flex-basis: 250px;
+    gap: 50px;
+    padding: 25px;
+
+
+}
+.first {
+    display:flex;
+    flex-direction: column;
+    gap: 25px;
+}
+#main_title {
+    color:#7C8CFE;
+    font-weight:bold;
+    font-size: 50px;
+    border-bottom: 2px solid white;
+    align-self: flex-start;
+}
+#main_description {
+    color:white;
+    font-size: 25px;
+}
+#btn_action {
+    background:none;
+    outline:none;
+    background:none;
+    border:none;
+    background: #FF6A6A;
+    border-radius: 50%;
+    color:white;
+    align-self: flex-end;
+    width: 50px;
+    height: 50px;
+    transition: .5s transform;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+#btn_action:hover {
+    cursor:pointer;
+    transform: scale(1.1);
+}
+.fa-microphone {
+    font-size: 25px;
+    padding: 15px;
+}
+svg {
+    width: 50px;
+    height: 50px;
+}
+#inside_aligner {
+    display:flex;
+    gap: 25px;
+    align-items: center;
+    margin-top: -50px;
+
+}
+#status {
+    color:white;
+}
+.second {
+    background:white;
+    padding: 25px;
+    border-radius: 25px;
+    display:flex;
+    flex-direction:column;
+    gap: 15px;
+    width: 500px;
+    box-shadow: 6px 6px 6px black;
+
+}
+#input_main {
+    padding: 15px;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    outline:none;
+    border:none;
+}
+#input_aligner {
+    display:flex;
+    align-items:center;
+ 
+   
+}
+.fa-sticky-note-o {
+    background:#FF6A6A;
+    padding: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+
+}
+.fa-sticky-note-o:hover {
+    cursor:pointer;
+}

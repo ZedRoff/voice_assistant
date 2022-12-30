@@ -7,6 +7,7 @@ const App = () => {
     let [recognizing, setRecognizing] = useState(false)
     let [x, setX] = useState(0)
     let ref = useRef()
+
     recognition.continuous = true;
     recognition.lang = "en-US"
     utter.lang = "en-US"
@@ -23,7 +24,7 @@ const App = () => {
         }
     
       const cmd = (message) => {
-        if(ref.current.value.length != 0) {
+        if(ref.current.value.length !== 0) {
             write(ref.current.value, 0)
             ref.current.value = ""
         }else {
@@ -48,7 +49,7 @@ const App = () => {
         let block = document.getElementById("block")
         let new_li = document.createElement("li")
         new_li.textContent = msg;
-        if(type == 0) {
+        if(type === 0) {
             new_li.style.background = "green";
         }else {
             new_li.style.background = "red";
@@ -57,28 +58,26 @@ const App = () => {
         block.appendChild(new_li)
     }
       const starter = () => {
-        console.log("started")
         recognition.start()
         setX(1)
     }
     const stopper = () => {
-        console.log("stopped")
         recognition.stop()
         setX(0)
     }
 
     useEffect(() => {
 window.addEventListener("keypress", (ev) => {
-    if(ev.key == "Enter") {
+    if(ev.key === "Enter") {
         if(ref.current.value.length === 0) return;
         cmd(ref.current.value)
     }
 })
-    }, [])
+    })
     return(
      <div className="container">
         <div className="first">
-<h2 id="main_title">Voice Assistant</h2>
+<h2 id="main_title"><i class="fas fa-robot"></i> | Voice Assistant</h2>
 <p id="main_description">A simple assistant that gives you plenty of cool informations :D</p>
 <button onClick={x === 0 ? starter : stopper} id="btn_action"><i className="fas fa-microphone"></i></button>
 <div id="inside_aligner"><svg fill={recognizing ? "green" : "red"} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M64 0C28.7 0 0 28.7 0 64V448c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V64c0-35.3-28.7-64-64-64H64zM176 432h96c8.8 0 16 7.2 16 16s-7.2 16-16 16H176c-8.8 0-16-7.2-16-16s7.2-16 16-16z"/></svg>

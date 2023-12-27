@@ -27,8 +27,10 @@ const App = () => {
         if(ref.current.value.length !== 0) {
             write(ref.current.value, 0)
             ref.current.value = ""
+            stopper()
         }else {
             write(message, 0)
+            stopper()
         }
      
         switch(message) {
@@ -44,6 +46,7 @@ const App = () => {
         utter.text = msg
         synth.speak(utter)
         write(msg, 1)
+        stopper()
     }
     const write = (msg, type) => {
         let block = document.getElementById("block")
